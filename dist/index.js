@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const sslify = require("koa-sslify");
 const Koa = require("koa");
@@ -19,9 +20,16 @@ class KoaSslify extends module_1.Module {
             for (const wrapper of config.wrappers) {
                 redirectToHttps = wrapper(redirectToHttps);
             }
+            // this.app.sslifyServer = http
+            //   .createServer(redirectToHttps)
+            //   .listen(
+            //     config.port,
+            //     () => {
+            //       this.log.info('handle ACME http-01 challenge and redirect to https')
+            //     }
+            //   )
         });
     }
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = KoaSslify;
 //# sourceMappingURL=index.js.map
