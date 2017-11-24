@@ -1,6 +1,6 @@
 {
   "name": "magnet-koa-sslify",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Magnet adapter for koa-sslify",
   "keywords": [
     "magnet",

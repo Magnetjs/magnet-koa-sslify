@@ -10,26 +10,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const sslify = require("koa-sslify");
-const Koa = require("koa");
-const koaSslify_1 = require("./config/koaSslify");
-class KoaSslify extends module_1.Module {
+const koa = require("koa");
+class MagnetKoaSslify extends module_1.Module {
+    init() {
+        this.moduleName = 'koa-sslify';
+        this.defaultConfig = __dirname;
+    }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            const config = this.prepareConfig('koaSslify', koaSslify_1.default);
-            let redirectToHttps = new Koa().use(sslify()).callback();
-            for (const wrapper of config.wrappers) {
-                redirectToHttps = wrapper(redirectToHttps);
+            if (!this.config.magnet) {
+                return;
             }
-            // this.app.sslifyServer = http
-            //   .createServer(redirectToHttps)
-            //   .listen(
-            //     config.port,
-            //     () => {
-            //       this.log.info('handle ACME http-01 challenge and redirect to https')
-            //     }
-            //   )
+            this.app.config[this.config.magnet].requestListener = koa().use(sslify()).callback();
         });
     }
 }
-exports.default = KoaSslify;
+exports.default = MagnetKoaSslify;
 //# sourceMappingURL=index.js.map
