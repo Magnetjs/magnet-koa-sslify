@@ -1,1 +1,1 @@
-{"version":3,"file":"koaSslify.js","sourceRoot":"","sources":["../../src/config/koaSslify.ts"],"names":[],"mappings":";;AAAA,kBAAe;IACb,IAAI,EAAE,EAAE;IACR,QAAQ,EAAE,EAAE;CACb,CAAA"}
+"{\"version\":3,\"file\":\"koaSslify.js\",\"sourceRoot\":\"\",\"sources\":[\"../koaSslify.ts\"],\"names\":[],\"mappings\":\";;AAAA,kBAAe;IACb,IAAI,EAAE,EAAE;IACR,QAAQ,EAAE,EAAE;IACZ,yCAAyC;IACzC,MAAM,EAAE,MAAM;CACf,CAAA\"}"
