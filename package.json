@@ -26,7 +26,7 @@
     "dist": "npm run build && npm publish"
   },
   "dependencies": {
-    "koa": "^2.4.1",
+    "koa": "^3.0.1",
     "koa-sslify": "^1.1.0",
     "magnet-core": "^3.3.0"
   },
